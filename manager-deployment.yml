@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: agent-test
+        labels:
+                app: agent-test
+spec:
+        selector:
+                matchLabels:
+                        app: agent-test
+                        tier: web
+        template:
+                metadata:
+                        labels:
+                                app: agent-test
+                                tier: web
+                spec:
+                        containers:
+                                - name: agent-test
+                                  image: gcr.io/agent-test-275106/agent-test:v1
+                                  ports:
+                                          - containerPort: 8080

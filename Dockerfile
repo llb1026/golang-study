@@ -3,4 +3,5 @@
 FROM scratch
 WORKDIR /go/src/agent-test
 COPY . .
+ENV PORT 8080
 CMD ["main"]

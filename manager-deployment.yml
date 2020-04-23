@@ -17,6 +17,6 @@ spec:
                 spec:
                         containers:
                                 - name: agent-test
-                                  image: gcr.io/agent-test-275106/agent-test:v1
+                                  image: gcr.io/agent-test-275106/agent-test:v2
                                   ports:
                                           - containerPort: 8080

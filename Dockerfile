@@ -1,7 +1,6 @@
-FROM golang:1.8-alpine
-ADD . /go/src/agent-test
-RUN go install agent-test
-FROM alpine:latest
-COPY --from=0 /go/bin/agent-test .
-ENV PORT 8080
-CMD ["./agent-test"]
+#   CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -ldflags '-w -s' -o main main.go
+
+FROM scratch
+WORKDIR /go/src/agent-test
+COPY . .
+CMD ["main"]
